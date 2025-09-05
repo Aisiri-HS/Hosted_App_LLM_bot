@@ -147,3 +147,4 @@ const styles = {
     fontSize: 16,
     padding: "0.5rem 1rem",
     borderRadius: 20,
+    }
