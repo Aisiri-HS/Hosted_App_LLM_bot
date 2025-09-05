@@ -12,7 +12,7 @@ FRONTEND_URL = "https://68bac84a07cae814506e55cd--ephemeral-brigadeiros-d3e2dd.n
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONTEND_URL],  # Allow only your frontend domain for security
+    allow_origins=["*"],  # Allow only your frontend domain for security
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
