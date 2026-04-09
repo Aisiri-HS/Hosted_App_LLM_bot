@@ -62,8 +62,9 @@ export default function App() {
             style={{
               ...styles.message,
               alignSelf: msg.sender === "user" ? "flex-end" : "flex-start",
-              backgroundColor: msg.sender === "user" ? "#4B9CE2" : "#E5E5EA",
-              color: msg.sender === "user" ? "#fff" : "#000",
+              backgroundColor: msg.sender === "user" ? "#7b2cbf" : "#3a0066",
+color: "#fff",
+             
               borderTopRightRadius: msg.sender === "user" ? 0 : 20,
               borderTopLeftRadius: msg.sender === "user" ? 20 : 0,
             }}
