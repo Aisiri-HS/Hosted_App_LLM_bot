@@ -53,7 +53,7 @@ export default function App() {
   return (
     <div style={styles.container}>
       <header style={styles.header}>
-        <h1>Company Chatbot</h1>
+        <h1>Aisiri's Chatbot</h1>
       </header>
       <section style={styles.chatWindow}>
         {chatHistory.map((msg, i) => (
