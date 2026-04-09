@@ -8,7 +8,7 @@ export default function App() {
   const [question, setQuestion] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
-  const API_BASE_URL = "https://hosted-app-llm-bot-tmmy.onrender.com"; // Replace with your backend URL
+  const API_BASE_URL = "https://hosted-app-llm-bot-tmmy.onrender.com";
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -31,14 +31,23 @@ export default function App() {
         body: JSON.stringify({ question }),
       });
       const data = await res.json();
+
       setChatHistory((prev) => [
         ...prev,
-        { sender: "bot", message: data.answer || "No response", timestamp: new Date() },
+        {
+          sender: "bot",
+          message: data.answer || "No response",
+          timestamp: new Date(),
+        },
       ]);
     } catch {
       setChatHistory((prev) => [
         ...prev,
-        { sender: "bot", message: "Error contacting server", timestamp: new Date() },
+        {
+          sender: "bot",
+          message: "Error contacting server",
+          timestamp: new Date(),
+        },
       ]);
     }
 
@@ -55,26 +64,34 @@ export default function App() {
       <header style={styles.header}>
         <h1>Aisiri's Chatbot</h1>
       </header>
+
       <section style={styles.chatWindow}>
         {chatHistory.map((msg, i) => (
           <div
             key={i}
             style={{
               ...styles.message,
-              alignSelf: msg.sender === "user" ? "flex-end" : "flex-start",
-              backgroundColor: msg.sender === "user" ? "#7b2cbf" : "#3a0066",
-color: "#fff",
-             
-              borderTopRightRadius: msg.sender === "user" ? 0 : 20,
-              borderTopLeftRadius: msg.sender === "user" ? 20 : 0,
+              alignSelf:
+                msg.sender === "user" ? "flex-end" : "flex-start",
+              backgroundColor:
+                msg.sender === "user" ? "#7b2cbf" : "#3a0066",
+              color: "#fff",
+              borderTopRightRadius:
+                msg.sender === "user" ? 0 : 20,
+              borderTopLeftRadius:
+                msg.sender === "user" ? 20 : 0,
             }}
           >
             <div>{msg.message}</div>
-            <div style={styles.timestamp}>{formatTime(new Date(msg.timestamp))}</div>
+            <div style={styles.timestamp}>
+              {formatTime(new Date(msg.timestamp))}
+            </div>
           </div>
         ))}
+
         <div ref={messagesEndRef} />
       </section>
+
       <footer style={styles.footer}>
         <input
           type="text"
@@ -85,6 +102,7 @@ color: "#fff",
           style={styles.input}
           disabled={loading}
         />
+
         <button
           onClick={sendQuestion}
           disabled={loading || !question.trim()}
@@ -97,8 +115,8 @@ color: "#fff",
   );
 }
 
+// ✅ ONLY ONE styles object (FIXED)
 const styles = {
-  const styles = {
   container: {
     maxWidth: 600,
     margin: "2rem auto",
@@ -107,7 +125,7 @@ const styles = {
     height: "80vh",
     fontFamily: "'Segoe UI', sans-serif",
     borderRadius: 12,
-    backgroundColor: "#14001f", // deep violet
+    backgroundColor: "#14001f",
     color: "white",
     boxShadow: "0 0 20px rgba(0,0,0,0.6)",
   },
@@ -115,9 +133,9 @@ const styles = {
   header: {
     padding: "1rem",
     borderBottom: "1px solid #3a0066",
-    backgroundColor: "#24003a", // dark purple
+    backgroundColor: "#24003a",
     textAlign: "center",
-    color: "#c77dff", // violet text
+    color: "#c77dff",
   },
 
   chatWindow: {
@@ -127,7 +145,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     gap: 12,
-    backgroundColor: "#14001f", // same as container
+    backgroundColor: "#14001f",
   },
 
   message: {
@@ -170,9 +188,6 @@ const styles = {
     backgroundColor: "#7b2cbf",
     color: "#fff",
     fontSize: 16,
-    cursor: "pointer",
-  },
-};
     cursor: "pointer",
   },
 };
