@@ -97,23 +97,28 @@ export default function App() {
 }
 
 const styles = {
+  const styles = {
   container: {
     maxWidth: 600,
     margin: "2rem auto",
     display: "flex",
     flexDirection: "column",
     height: "80vh",
-    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-    border: "1px solid #ddd",
-    borderRadius: 8,
-    boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+    fontFamily: "'Segoe UI', sans-serif",
+    borderRadius: 12,
+    backgroundColor: "#14001f", // deep violet
+    color: "white",
+    boxShadow: "0 0 20px rgba(0,0,0,0.6)",
   },
+
   header: {
     padding: "1rem",
-    borderBottom: "1px solid #ddd",
-    backgroundColor: "#f7f7f7",
+    borderBottom: "1px solid #3a0066",
+    backgroundColor: "#24003a", // dark purple
     textAlign: "center",
+    color: "#c77dff", // violet text
   },
+
   chatWindow: {
     flexGrow: 1,
     overflowY: "auto",
@@ -121,43 +126,52 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     gap: 12,
-    backgroundColor: "#fff",
+    backgroundColor: "#14001f", // same as container
   },
+
   message: {
     maxWidth: "70%",
     padding: "0.75rem 1.25rem",
     borderRadius: 20,
     fontSize: 16,
-    wordWrap: "break-word",
   },
+
   timestamp: {
     fontSize: 11,
     opacity: 0.6,
     marginTop: 4,
     textAlign: "right",
   },
+
   footer: {
     display: "flex",
-    borderTop: "1px solid #ddd",
+    borderTop: "1px solid #3a0066",
     padding: "1rem",
-    backgroundColor: "#f7f7f7",
+    backgroundColor: "#24003a",
   },
+
   input: {
     flexGrow: 1,
     fontSize: 16,
     padding: "0.5rem 1rem",
     borderRadius: 20,
-    border: "1px solid #ccc",
+    border: "none",
     outline: "none",
+    backgroundColor: "#3a0066",
+    color: "white",
   },
+
   button: {
     marginLeft: 12,
     padding: "0.5rem 1.5rem",
     borderRadius: 20,
     border: "none",
-    backgroundColor: "#4B9CE2",
+    backgroundColor: "#7b2cbf",
     color: "#fff",
     fontSize: 16,
+    cursor: "pointer",
+  },
+};
     cursor: "pointer",
   },
 };
