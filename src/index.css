@@ -1,24 +1,4 @@
-.chat-container {
-  background-color: #2d004d;
-  border-radius: 12px;
-  padding: 20px;
-  width: 60%;
-  margin: 40px auto;
-}
-
-input {
-  background-color: #3a0066;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 20px;
-}
-
-button {
-  background-color: #7b2cbf;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
+body {
+  margin: 0;
+  background-color: #0d001a; /* full dark violet */
 }
